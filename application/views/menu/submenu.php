@@ -15,39 +15,50 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addSubMenu">Add New Submenu</a>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="">Submenu Management</a></li>
+                        </ol>
+                    </nav>
 
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Menu</th>
-                        <th scope="col">Url</th>
-                        <th scope="col">Icon</th>
-                        <th scope="col">Active</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i = 1; ?>
-                    <?php foreach ($submenu as $row) : ?>
-                        <tr>
-                            <th scope="row"><?= $i; ?></th>
-                            <td><?= $row['title']; ?></td>
-                            <td><?= $row['menu']; ?></td>
-                            <td><?= $row['url']; ?></td>
-                            <td><?= $row['icon']; ?></td>
-                            <td><?= $row['is_active']; ?></td>
-                            <td>
-                                <a href="#" class="badge badge-success">Edit</a>
-                                <a href="#" class="badge badge-danger">Delete</a>
-                            </td>
-                        </tr>
-                        <?php $i++; ?>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                    <a href="" class="btn btn-primary mb-3 btn-block btn-sm" data-toggle="modal" data-target="#addSubMenu">Add New Submenu</a>
+
+                    <table class="table table-hover table-bordered table-sm">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" style="text-align:center;">No</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Menu</th>
+                                <th scope="col">Url</th>
+                                <th scope="col">Icon</th>
+                                <th scope="col" style="text-align:center;">Active</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i = 1; ?>
+                            <?php foreach ($submenu as $row) : ?>
+                                <tr>
+                                    <th scope="row" style="text-align:center;"><?= $i; ?></th>
+                                    <td><?= $row['title']; ?></td>
+                                    <td><?= $row['menu']; ?></td>
+                                    <td><?= $row['url']; ?></td>
+                                    <td><?= $row['icon']; ?></td>
+                                    <td style="text-align:center;"><?= $row['is_active']; ?></td>
+                                    <td>
+                                        <a href="#" class="badge badge-success">Edit</a>
+                                        <a href="#" class="badge badge-success">Delete</a>
+                                    </td>
+                                </tr>
+                                <?php $i++; ?>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -70,10 +81,10 @@
             <form action="<?= base_url('menu/submenu'); ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Submenu Title"></input>
+                        <input type="text" class="form-control form-control-sm" id="title" name="title" placeholder="Submenu Title"></input>
                     </div>
                     <div class="form-group">
-                        <select name="menu_id" id="menu_id" class="form-control">
+                        <select name="menu_id" id="menu_id" class="form-control form-control-sm">
                             <option value="">Select Menu</option>
                             <?php foreach ($menu as $row) : ?>
                                 <option value="<?= $row['id']; ?>"><?= $row['menu']; ?></option>
@@ -82,10 +93,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="url" name="url" placeholder="Submenu Url"></input>
+                        <input type="text" class="form-control form-control-sm" id="url" name="url" placeholder="Submenu Url"></input>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="icon" name="icon" placeholder="Submenu Icon"></input>
+                        <input type="text" class="form-control form-control-sm" id="icon" name="icon" placeholder="Submenu Icon"></input>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
@@ -101,8 +112,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Save</button>
                 </div>
             </form>
         </div>

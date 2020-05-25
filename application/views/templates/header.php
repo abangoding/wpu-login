@@ -9,6 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <style>
+        .breadcrumb {
+            padding: 5px 10px !important;
+        }
+    </style>
+
     <title><?= $title; ?></title>
 
     <!-- Custom fonts for this template-->
@@ -20,7 +26,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onLoad="waktu()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
