@@ -8,27 +8,27 @@
     	<div class="col-lg-8">
     		<?= form_open_multipart('user/edit'); ?>
     			<div class="form-group row">
-    				<label for="email" class="col-sm-2 col-form-label">Email</label>
+    				<label for="email" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
     				<div class="col-sm-10">
-    					<input type="text" name="email" class="form-control" id="email" value="<?= $user['email']; ?>" readonly>
+    					<input type="text" name="email" class="form-control form-control-sm" id="email" value="<?= $user['email']; ?>" readonly>
     				</div>
     			</div>
     			<div class="form-group row">
-    				<label for="name" class="col-sm-2 col-form-label">Full Name</label>
+    				<label for="name" class="col-sm-2 col-form-label col-form-label-sm">Full Name</label>
     				<div class="col-sm-10">
-    					<input type="text" name="name" class="form-control" id="name" value="<?= $user['name']; ?>">
+    					<input type="text" name="name" class="form-control form-control-sm" id="name" value="<?= $user['name']; ?>">
     					<?= form_error('name', '<small class="text-danger">', '</small>'); ?>
     				</div>
     			</div>
     			<div class="form-group row">
-    				<div class="col-sm-2">Picture</div>
+    				<div class="col-sm-2 col-form-label-sm">Picture</div>
     				<div class="col-sm-10">
     					<div class="row">
     						<div class="col-sm-3">
     							<img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" class="img-thumbnail">
     						</div>
     						<div class="col-sm-9">
-    							<div class="custom-file">
+    							<div class="custom-file small">
     								<input type="file" name="image" class="custom-file-input" id="image">
     								<label class="custom-file-label" for="image">Choose file</label>
     							</div>
@@ -38,7 +38,7 @@
     			</div>
     			<div class="form-group row justify-content-end">
     				<div class="col-sm-10">
-    					<button type="submit" class="btn btn-primary">Edit</button>
+    					<button type="submit" class="btn btn-primary btn-sm">Edit</button>
     				</div>
     			</div>
     		</form>

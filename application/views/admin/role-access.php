@@ -19,7 +19,7 @@
                     <hr>
                     <h5>Role : <?= $role['role']; ?></h5>
 
-                    <table class="table table-hover table-bordered">
+                    <table class="table table-hover table-bordered table-sm">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" style="text-align:center;width:5%;">No</th>

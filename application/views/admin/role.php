@@ -19,9 +19,9 @@
                         </ol>
                     </nav>
                     <hr>
-                    <a href="" class="btn btn-primary btn-block mb-3" data-toggle="modal" data-target="#addRole">Add New Role</a>
+                    <a href="" class="btn btn-primary btn-block mb-3 btn-sm" data-toggle="modal" data-target="#addRole">Add New Role</a>
 
-                    <table class="table table-hover table-bordered">
+                    <table class="table table-hover table-bordered table-sm">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col" style="text-align:center; width:5%;">No</th>
@@ -70,12 +70,12 @@
             <form action="<?= base_url('admin/role'); ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="role" name="role" placeholder="Role name"></input>
+                        <input type="text" class="form-control form-control-sm" id="role" name="role" placeholder="Role name"></input>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Save</button>
                 </div>
             </form>
         </div>
