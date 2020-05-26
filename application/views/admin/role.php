@@ -54,9 +54,6 @@
 </div>
 <!-- /.container-fluid -->
 
-</div>
-<!-- End of Main Content -->
-
 <!-- Modal Add New Role -->
 <div class="modal fade" id="addRole" tabindex="-1" role="dialog" aria-labelledby="addRoleLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

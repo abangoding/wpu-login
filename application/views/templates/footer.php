@@ -1,3 +1,6 @@
+</div>
+<!-- End of Main Content -->
+
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
@@ -47,6 +50,17 @@
 
 <!-- Custom scripts for all pages-->
 <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/select2-3.5.3/select2.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/select2-3.5.3/select2.min.js"></script>
+<script src="<?= base_url('assets/'); ?>js/jquery.price_format.js"></script>
+
+<!-- Page level plugins -->
+<script src="<?= base_url('assets/'); ?>vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Sweet Alert -->
+<script src="<?= base_url(); ?>assets/js/sweetalert2.all.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/myscript.js"></script>
 
 <script>
     $('.custom-file-input').on('change', function() {
@@ -79,6 +93,17 @@
         setTimeout("waktu()",1000);
         document.getElementById("hasil").innerHTML = tanggal;
     }
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable( {
+            "pageLength": 25,
+            "paging":   true,
+            "ordering": true,
+            "info":     true
+        } );
+    } );
 </script>
 
 </body>

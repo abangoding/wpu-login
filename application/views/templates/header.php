@@ -24,6 +24,14 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="<?= base_url('assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/'); ?>vendor/select2-3.5.3/select2.css" rel="stylesheet">
+    <link href="<?= base_url('assets/'); ?>vendor/select2-3.5.3/select2-bootstrap.css" rel="stylesheet">
+
+    <!-- My CSS -->
+    <link href="<?= base_url('assets/'); ?>css/style.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top" onLoad="waktu()">
