@@ -2,31 +2,30 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+    <h1 class="h3 mb-4 text-gray-800">Role Management</h1>
 
     <div class="row">
         <div class="col-lg">
-            
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Role</li>
+                </ol>
+            </nav>
+
             <?= form_error('role', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
             <?= $this->session->flashdata('message'); ?>
             
             <div class="card mb-4">
                 <div class="card-body">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="<?= base_url('admin/'); ?>"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Role</li>
-                        </ol>
-                    </nav>
-                    <hr>
-                    <a href="" class="btn btn-primary btn-block mb-3 btn-sm" data-toggle="modal" data-target="#addRole">Add New Role</a>
+                    <a href="" class="btn btn-primary btn-block mb-3 btn-sm" data-toggle="modal" data-target="#addRole"><i class="fas fa-fw fa-plus"></i> Add New</a>
 
-                    <table class="table table-hover table-bordered table-sm">
+                    <table class="table table-hover table-bordered table-sm" id="dataTable" width="100%" cellspacing="0">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col" style="text-align:center; width:5%;">No</th>
-                                <th scope="col" style="width:60%;">Role</th>
-                                <th scope="col" style="width:35%;">Action</th>
+                                <th scope="col" style="text-align:center; width:8%; padding-right:7px;">No</th>
+                                <th scope="col" style="width:75%;">Role</th>
+                                <th scope="col" style="text-align:center; width:17%; padding-right:7px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,10 +34,8 @@
                                 <tr>
                                     <th scope="row" style="text-align:center;"><?= $i; ?></th>
                                     <td><?= $row['role']; ?></td>
-                                    <td>
+                                    <td style="text-align:center;">
                                         <a href="<?= base_url('admin/roleaccess/') . $row['id']; ?>" class="badge badge-success">Access</a>
-                                        <a href="#" class="badge badge-success">Edit</a>
-                                        <a href="#" class="badge badge-success">Delete</a>
                                     </td>
                                 </tr>
                                 <?php $i++; ?>
@@ -67,11 +64,11 @@
             <form action="<?= base_url('admin/role'); ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-sm" id="role" name="role" placeholder="Role name"></input>
+                        <label for="role">Role Name</label>
+                        <input type="text" class="form-control" id="role" name="role"></input>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary btn-sm">Save</button>
                 </div>
             </form>
