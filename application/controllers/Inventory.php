@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Asset extends CI_Controller {
+class Inventory extends CI_Controller {
 
 	public function __construct()
     {
@@ -13,7 +13,7 @@ class Asset extends CI_Controller {
 
 	public function index()
     {
-        $data['title'] = 'Inventory';
+        $data['title'] = 'Asset';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->load->view('templates/header', $data);
@@ -25,7 +25,7 @@ class Asset extends CI_Controller {
 
     public function laptop()
     {
-        $data['title'] = 'Inventory';
+        $data['title'] = 'Asset';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $data['laptop'] = $this->Laptop_model->getAllLaptop();
@@ -39,5 +39,5 @@ class Asset extends CI_Controller {
 
 }
 
-/* End of file Asset.php */
-/* Location: ./application/controllers/Asset.php */
+/* End of file Inventory.php */
+/* Location: ./application/controllers/Inventory.php */

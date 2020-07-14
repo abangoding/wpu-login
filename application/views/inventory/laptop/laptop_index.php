@@ -36,7 +36,35 @@
                                         <td><?= $lpt['inv_model'] ?></td>
                                         <td><?= $lpt['inv_os'] ?></td>
                                         <td><?= $lpt['inv_serial_number'] ?></td>
-                                        <td><?= $lpt['inv_status'] ?></td>
+                                        <td>
+                                            <?php 
+                                                $status = $lpt['inv_status'];
+                                                if ($status == 0) 
+                                                {
+                                                ?>
+                                                    <a href="#" class="badge badge-primary">Request</a>  
+                                                <?php  
+                                                }
+                                                else if ($status == 1)
+                                                {
+                                                    ?>
+                                                        <a href="#" class="badge badge-info">Pending</a>  
+                                                    <?php 
+                                                }
+                                                else if ($status == 2)
+                                                {
+                                                    ?>
+                                                        <a href="#" class="badge badge-warning">Deployed</a>  
+                                                    <?php 
+                                                }
+                                                else if ($status == 3)
+                                                {
+                                                    ?>
+                                                        <a href="#" class="badge badge-success">Archived</a>  
+                                                    <?php 
+                                                }
+                                            ?>
+                                        </td>
                                         <td style="text-align: center;">
                                             <a href="<?= base_url(); ?>asset/update_laptop/<?= $lpt['id']; ?>" class="badge badge-success">View</a>
                                             <a href="<?= base_url(); ?>asset/update_laptop/<?= $lpt['id']; ?>" class="badge badge-success">Update</a>

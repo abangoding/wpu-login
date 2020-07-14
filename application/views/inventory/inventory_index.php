@@ -14,7 +14,7 @@
                 <div class="col mr-2">
                     <div class="font-weight-bold text-white text-uppercase" style="font-size:15px;">Laptop</div>
                     <div class="mb-0 font-weight-bold text-white" style="font-size:40px;">80</div>
-                    <a href="<?= base_url('asset/laptop'); ?>" class="text-white">View Details &rarr;</a>
+                    <a href="<?= base_url('inventory/laptop'); ?>" class="text-white">View Details &rarr;</a>
                 </div>
                 <div class="col-auto">
                   <i class="fas fa-laptop fa-4x text-white"></i>
