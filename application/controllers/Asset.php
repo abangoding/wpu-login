@@ -23,6 +23,20 @@ class Asset extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function laptop()
+    {
+        $data['title'] = 'Inventory';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $data['laptop'] = $this->Laptop_model->getAllLaptop();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('inventory/laptop/laptop_index', $data);
+        $this->load->view('templates/footer');
+    }
+
 }
 
 /* End of file Asset.php */
